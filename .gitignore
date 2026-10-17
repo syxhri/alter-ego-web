@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.npm/
+.yarn/
+
+# Internal docs (not for repo)
+PANDUAN-GAMBAR.md
+
+# Build outputs
+dist/
+.next/
+out/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor backup
+*~
+*.swp
+*.swo

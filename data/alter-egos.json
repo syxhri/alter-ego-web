@@ -1,0 +1,47 @@
+[
+  {
+    "member": "Alfisyahri Amrun A",
+    "nim": "15201425001",
+    "character": "Jinhsi",
+    "memberImage": "images/members/alfisyahri.jpg",
+    "charImage": "images/characters/jinhsi.jpg",
+    "category": "Wuthering Waves",
+    "desc": "Kadang ceria, kadang menarik diri — dan di antara keduanya ada ketenangan yang bukan berasal dari ketidakpedulian, melainkan dari seseorang yang telah memilih untuk bertahan. Seperti Jinhsi yang memimpin bukan lewat perintah keras, melainkan lewat kehadiran tenang yang membuat semua orang di sekitarnya merasa aman tanpa kata-kata."
+  },
+  {
+    "member": "Arsyto Adhwa Alvaro Muliawan",
+    "nim": "15201425018",
+    "character": "Han Sooyoung",
+    "memberImage": "images/members/arsyto.jpg",
+    "charImage": "images/characters/han-sooyoung.jpg",
+    "category": "Omniscient Reader",
+    "desc": "Selalu ceria, mudah tersulut, sarkastik di belakang — kata-katanya bisa menusuk, tapi tawanya yang paling keras di ruangan adalah tanda bahwa dia menikmati kehadiranmu. Persis seperti Han Sooyoung: sarkas adalah perisai, tawa adalah undangan, dan di balik semuanya ada kesetiaan yang tidak akan pernah dia akui terang-terangan."
+  },
+  {
+    "member": "Marsela Damalu",
+    "nim": "15201425030",
+    "character": "Jianxin",
+    "memberImage": "images/members/marsela.jpg",
+    "charImage": "images/characters/jianxin.jpg",
+    "category": "Wuthering Waves",
+    "desc": "Kadang ceria, kadang diam — dan keduanya sama nyatanya. Marsela bergerak melalui situasi dengan ketenangan batin yang entah hasil latihan atau keras kepala terlatih. Seperti Jianxin: tidak memaksa, tidak mendesak — dia menunggu, mendengar, dan ketika momen tiba, kehadiran saja sudah cukup untuk mengubah arah segalanya."
+  },
+  {
+    "member": "Nabila Rajak",
+    "nim": "15201425028",
+    "character": "Hermione Granger",
+    "memberImage": "images/members/nabila.jpg",
+    "charImage": "images/characters/hermione.jpg",
+    "category": "Harry Potter",
+    "desc": "Pemalu di awal, penuh kasih begitu nyaman — butuh waktu untuk melihat seluruh kehangatannya, tapi begitu sudah, dia adalah salah satu yang paling bisa diandalkan. Seperti Hermione: terlihat pendiam dan berjarak di permukaan, namun di baliknya ada kepedulian yang mendalam dan keberanian yang tidak pernah ragu ketika yang penting dipertaruhkan."
+  },
+  {
+    "member": "Rahmat Suleman",
+    "nim": "15201425014",
+    "character": "Arlecchino",
+    "memberImage": "images/members/rahmat.jpg",
+    "charImage": "images/characters/arlecchino.jpg",
+    "category": "Genshin Impact",
+    "desc": "Baik saat diperlakukan baik, jauh lebih keras saat diperlakukan buruk — responnya mencerminkan apa yang diterimanya. Seperti Arlecchino yang tidak kejam tanpa alasan; standarnya tinggi, dan penilaiannya menyesuaikan apa yang dia hadapi. Gravity-nya bukan sesuatu yang diminta — itu hanya ada, dan orang-orang menyadarinya dengan sendirinya."
+  }
+]

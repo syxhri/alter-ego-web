@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ALTER EGO — Dark Editorial Character Archive. 20 karakter fiksi, 5 refleksi nyata." />
+  <title>ALTER EGO · Character Archive</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+    fetchpriority="high"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+
+      <!-- Logo: inline SVG -->
+      <a href="#" class="navbar__logo" aria-label="ALTER EGO — Beranda">
+        <svg class="navbar__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 36" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="36" height="32" rx="3" fill="#1A1A1A"/>
+          <rect x="0" y="0" width="19" height="32" rx="3" fill="#D4BBFF"/>
+          <rect x="19" y="0" width="19" height="32" rx="3" fill="#B5EDDA"/>
+          <rect x="0" y="0" width="38" height="32" rx="3" fill="none" stroke="#1A1A1A" stroke-width="2.5"/>
+          <rect x="18" y="0" width="2" height="32" fill="#1A1A1A"/>
+          <polygon points="19,2 21,6 19,10 17,6" fill="#1A1A1A"/>
+          <text x="9.5" y="25" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="15" font-weight="900" fill="#1A1A1A">A</text>
+          <text x="28.5" y="25" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="15" font-weight="900" fill="#1A1A1A">E</text>
+        </svg>
+        <span class="navbar__logo-text">ALTER<span>EGO</span></span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Navigasi utama">
+        <a href="#archive" class="navbar__link">Archive</a>
+        <a href="#alter-egos" class="navbar__link">Our Alter Ego</a>
+        <a href="#request" class="navbar__link">Request</a>
+      </nav>
+
+      <button
+        class="navbar__hamburger"
+        id="hamburger-btn"
+        aria-label="Buka/tutup menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Navigasi mobile">
+      <a href="#archive" class="navbar__mobile-link">
+        <!-- SVG: bookmark icon -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        Archive
+      </a>
+      <a href="#alter-egos" class="navbar__mobile-link">
+        <!-- SVG: users icon -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Our Alter Ego
+      </a>
+      <a href="#request" class="navbar__mobile-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Request
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ══ HERO ══ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__inner">
+        <div class="hero__text-block">
+          <div class="hero__stamp" aria-label="Kelompok 2">★ KELOMPOK 2 ★</div>
+          <h1 class="hero__heading" id="hero-heading">
+            WHO'S YOUR<br/>
+            <em>ALTER EGO?</em>
+          </h1>
+          <p class="hero__subtext">
+            20 karakter fiksi. 5 orang nyata. Satu archive tempat kepribadian bertemu karakter favorit.
+          </p>
+          <a href="#archive" class="btn btn--primary" id="explore-cta">
+            <!-- SVG: arrow right -->
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Explore Archive
+          </a>
+        </div>
+
+        <!-- RPG Party Panel -->
+        <div class="hero__panel" aria-label="Daftar party karakter pilihan">
+          <div class="hero__panel-header">
+            <span>DAFTAR PARTY</span>
+            <span>LV.∞</span>
+          </div>
+          <ul class="hero__party-list" role="list">
+            <li class="hero__party-item hero__party-item--lavender">
+              <!-- Sword SVG -->
+              <span class="party-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/>
+                  <line x1="13" y1="19" x2="19" y2="13"/>
+                  <line x1="16" y1="16" x2="20" y2="20"/>
+                  <line x1="19" y1="21" x2="21" y2="19"/>
+                </svg>
+              </span>
+              <span class="party-name">Jinhsi</span>
+              <span class="party-role">DPS</span>
+            </li>
+            <li class="hero__party-item hero__party-item--mint">
+              <!-- Shield SVG -->
+              <span class="party-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </span>
+              <span class="party-name">Jianxin</span>
+              <span class="party-role">SUP</span>
+            </li>
+            <li class="hero__party-item hero__party-item--peach">
+              <!-- Flame SVG -->
+              <span class="party-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8.5 14.5A4.5 4.5 0 0 0 12 18.5a4.5 4.5 0 0 0 3.5-3.5 4 4 0 0 0-1-2.5l-3.5-4s-.5 2.5-2 3c0-1-.5-2-1-2.5"/>
+                  <path d="M12 18.5c-1.5 0-3-1-3-2.5"/>
+                </svg>
+              </span>
+              <span class="party-name">Arlecchino</span>
+              <span class="party-role">DPS</span>
+            </li>
+            <li class="hero__party-item hero__party-item--rose">
+              <!-- Book SVG -->
+              <span class="party-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </span>
+              <span class="party-name">Han Sooyoung</span>
+              <span class="party-role">STR</span>
+            </li>
+            <li class="hero__party-item hero__party-item--sky">
+              <!-- Wand/magic SVG -->
+              <span class="party-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="21" x2="21" y2="3"/>
+                  <path d="M21 3L16 8M12 7l1-1M17 12l1-1M7 17l1-1"/>
+                  <circle cx="5" cy="19" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="19" cy="5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </span>
+              <span class="party-name">Hermione Granger</span>
+              <span class="party-role">MAG</span>
+            </li>
+          </ul>
+          <div class="hero__panel-footer">
+            <!-- SVG: chevron down -->
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            GULIR UNTUK LIHAT SEMUA
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TOOLBAR ══ -->
+    <section class="toolbar" id="archive" aria-label="Pencarian dan filter">
+      <div class="container">
+        <div class="toolbar__inner">
+          <div class="search-wrap">
+            <label for="search-input" class="sr-only">Cari karakter</label>
+            <!-- Search SVG icon -->
+            <svg class="search-wrap__icon" aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input
+              type="search"
+              id="search-input"
+              class="search-wrap__input"
+              placeholder="Cari karakter..."
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+
+          <div class="filter-chips" role="group" aria-label="Filter berdasarkan kategori">
+            <button class="chip chip--active"    data-filter="all">Semua</button>
+            <button class="chip chip--genshin"   data-filter="Genshin Impact">Genshin Impact</button>
+            <button class="chip chip--wuwa"      data-filter="Wuthering Waves">Wuthering Waves</button>
+            <button class="chip chip--enfield"   data-filter="Enfield">Enfield</button>
+            <button class="chip chip--nte"       data-filter="Neverness to Everness">Neverness to Everness</button>
+            <button class="chip chip--hp"        data-filter="Harry Potter">Harry Potter</button>
+            <button class="chip chip--orv"       data-filter="Omniscient Reader">Omniscient Reader</button>
+            <button class="chip chip--avatar"    data-filter="Avatar">Avatar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ARCHIVE ══ -->
+    <section class="archive-section" aria-labelledby="archive-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="archive-heading">
+            <span class="section-title__bracket">[</span>
+            CHARACTER ARCHIVE
+            <span class="section-title__bracket">]</span>
+          </h2>
+          <span class="section-count" id="archive-count" aria-live="polite" aria-atomic="true"></span>
+        </div>
+        <div class="character-grid" id="character-grid" role="list" aria-label="Arsip karakter"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <p class="empty-state__face">( ･ω･)</p>
+          <p>Karakter tidak ditemukan.<br/>Coba kata kunci lain~</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR ALTER EGO -->
+    <section class="alter-egos-section" id="alter-egos" aria-labelledby="alter-egos-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="alter-egos-heading">
+            <span class="section-title__bracket">[</span>
+            OUR ALTER EGO
+            <span class="section-title__bracket">]</span>
+          </h2>
+          <p class="section-sub">Karakter favorit mereka, dan kenapa itu makes sense. ★</p>
+        </div>
+        <div class="alter-egos-list" id="alter-egos-list"></div>
+      </div>
+    </section>
+
+    <!-- REQUEST KARAKTER -->
+    <section class="request-section" id="request" aria-labelledby="request-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="request-heading">
+            <span class="section-title__bracket">[</span>
+            REQUEST KARAKTER
+            <span class="section-title__bracket">]</span>
+          </h2>
+          <p class="section-sub">Ada karakter yang menurutmu layak masuk archive? Request di sini. ★</p>
+        </div>
+        <form class="request-form" id="request-form" novalidate>
+          <div class="request-form__row">
+            <div class="request-form__field">
+              <label class="request-form__label" for="req-name">Nama kamu</label>
+              <input class="request-form__input" type="text" id="req-name" name="name" placeholder="Nama / nickname..." autocomplete="name" required />
+            </div>
+            <div class="request-form__field">
+              <label class="request-form__label" for="req-category">Kategori</label>
+              <select class="request-form__input request-form__select" id="req-category" name="category" required>
+                <option value="">Pilih kategori...</option>
+                <option value="Genshin Impact">Genshin Impact</option>
+                <option value="Wuthering Waves">Wuthering Waves</option>
+                <option value="Enfield">Arknights: Endfield</option>
+                <option value="Neverness to Everness">Neverness to Everness</option>
+                <option value="Harry Potter">Harry Potter</option>
+                <option value="Omniscient Reader">Omniscient Reader's Viewpoint</option>
+                <option value="Avatar">Avatar</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+          </div>
+          <div class="request-form__field">
+            <label class="request-form__label" for="req-character">Nama karakter</label>
+            <input class="request-form__input" type="text" id="req-character" name="character" placeholder="Nama karakter yang kamu request..." required />
+          </div>
+          <div class="request-form__field">
+            <label class="request-form__label" for="req-reason">Kenapa karakter ini?</label>
+            <textarea class="request-form__input request-form__textarea" id="req-reason" name="reason" placeholder="Ceritain sedikit kenapa karakter ini layak masuk archive..." rows="4" required></textarea>
+          </div>
+          <div class="request-form__actions">
+            <button type="submit" class="btn btn--primary request-form__btn" id="request-submit">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Kirim Request
+            </button>
+            <p class="request-form__status" id="request-status" aria-live="polite" hidden></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__logo-wrap">
+        <svg class="footer__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 36" width="28" height="28" aria-hidden="true">
+          <rect x="3" y="3" width="36" height="32" rx="3" fill="#D4BBFF"/>
+          <rect x="0" y="0" width="19" height="32" rx="3" fill="#1A1A1A"/>
+          <rect x="19" y="0" width="19" height="32" rx="3" fill="#B5EDDA"/>
+          <rect x="0" y="0" width="38" height="32" rx="3" fill="none" stroke="#D4BBFF" stroke-width="2"/>
+          <rect x="18" y="0" width="2" height="32" fill="#D4BBFF"/>
+          <polygon points="19,2 21,6 19,10 17,6" fill="#D4BBFF"/>
+          <text x="9.5" y="25" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="15" font-weight="900" fill="#D4BBFF">A</text>
+          <text x="28.5" y="25" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="15" font-weight="900" fill="#1A1A1A">E</text>
+        </svg>
+        <span class="footer__logo-text">ALTER EGO</span>
+      </div>
+      <p class="footer__credit">★ Kelompok 2 · Proyek Pemrograman Web ★</p>
+      <p class="footer__copy">Semua karakter adalah hak milik kreator masing-masing.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div
+    class="modal-overlay"
+    id="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-char-name"
+    aria-describedby="modal-char-lore"
+    hidden
+  >
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modal-close" aria-label="Tutup detail karakter">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal__body">
+        <div class="modal__image-wrap">
+          <img class="modal__image" id="modal-image" src="" alt="" loading="lazy" />
+        </div>
+        <div class="modal__info">
+          <div class="modal__tags" id="modal-tags"></div>
+          <h2 class="modal__char-name" id="modal-char-name"></h2>
+          <p class="modal__char-title" id="modal-char-title"></p>
+          <p class="modal__divider" aria-hidden="true">· · · · · · · · · · · ·</p>
+          <p class="modal__char-lore" id="modal-char-lore"></p>
+          <div class="modal__stats" id="modal-stats"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
