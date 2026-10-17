@@ -299,27 +299,23 @@ function setRequestStatus(msg, type) {
 }
 
 async function sendToTelegram(data) {
-  const cfg = window.TELEGRAM_CONFIG;
-  if (!cfg || !cfg.enabled || !cfg.botToken || !cfg.chatId) {
-    setRequestStatus('⚠ Konfigurasi Telegram belum diset. Isi config.js terlebih dahulu.', 'err');
-    return;
-  }
-
-  const text =
-    `🎭 <b>REQUEST KARAKTER — ALTER EGO</b>\n\n` +
-    `👤 <b>Dari:</b> ${data.name}\n` +
-    `🎮 <b>Kategori:</b> ${data.category}\n` +
-    `✨ <b>Karakter:</b> ${data.character}\n\n` +
-    `💬 <b>Alasan:</b>\n${data.reason}`;
-
-  const url = `https://api.telegram.org/bot${cfg.botToken}/sendMessage`;
-  const res = await fetch(url, {
+  // Kirim ke Vercel serverless function — token Telegram ada di server, bukan browser
+  const res = await fetch('/api/send-request', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: cfg.chatId, text, parse_mode: 'HTML' }),
+    body: JSON.stringify(data),
   });
 
-  if (!res.ok) throw new Error(`Telegram error ${res.status}`);
+  const json = await res.json().catch(() => ({}));
+
+  if (!res.ok) {
+    // 503 = env vars belum diset di Vercel
+    // 404 = sedang buka via Live Server lokal (bukan Vercel)
+    if (res.status === 404) {
+      throw new Error('Fitur request hanya aktif saat di-deploy ke Vercel.');
+    }
+    throw new Error(json.error || `Error ${res.status}`);
+  }
 }
 
 if (requestForm) {
@@ -348,8 +344,8 @@ if (requestForm) {
       requestForm.reset();
       requestStatus.hidden = false;
     } catch (err) {
-      console.error('Telegram error:', err);
-      setRequestStatus('✗ Gagal kirim. Cek koneksi atau config Telegram.', 'err');
+      console.error('Request error:', err);
+      setRequestStatus(`✗ ${err.message}`, 'err');
     } finally {
       requestSubmit.disabled = false;
     }
