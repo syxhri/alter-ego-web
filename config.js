@@ -10,8 +10,12 @@
    4. Ubah enabled: false → enabled: true
    ═══════════════════════════════════════════════════════════════════════════ */
 
+/// from env
+const dotenv = require('dotenv');
+dotenv.config();
+
 window.TELEGRAM_CONFIG = {
   enabled:  false,                      // ← ubah jadi true setelah isi token
-  botToken: 'YOUR_BOT_TOKEN_HERE',      // ← isi token dari @BotFather
-  chatId:   'YOUR_CHAT_ID_HERE',        // ← isi chat_id kamu
+  botToken: process.env.BOT_TOKEN,      // ← isi token dari @BotFather
+  chatId:   process.env.CHAT_ID,        // ← isi chat_id kamu
 };

@@ -671,7 +671,7 @@ ul, ol { list-style: none; }
   border-radius: var(--r-md);
   box-shadow: var(--sh-lg);
   overflow: hidden;
-  aspect-ratio: 3 / 2;    /* wider on mobile — more visible */
+  aspect-ratio: 4 / 5;    /* portrait — better for character art on mobile */
   background: var(--cream);
   transition: box-shadow var(--dur), transform var(--dur);
 }
@@ -815,6 +815,18 @@ ul, ol { list-style: none; }
   font-size: 0.72rem;
   color: #888;
 }
+.footer__github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #aaa;
+  text-decoration: none;
+  margin-block: 0.25rem;
+  transition: color var(--dur);
+}
+.footer__github:hover { color: var(--cream); }
 
 /* MODAL — mobile first: stacked */
 .modal-overlay {
