@@ -10,7 +10,7 @@
       "Pyro",
       "Fatui Harbinger"
     ],
-    "lore": "Dingin, kalkulatif, dan menakutkan dengan cara yang anehnya maternal — dia akan membunuhmu tanpa ragu, tapi sungguh-sungguh peduli pada 'anak-anaknya' di House of the Hearth dengan caranya yang terpelintir sendiri. Naik dari yatim piatu jadi Harbinger ke-4 paling kuat, hanya dengan keberanian dan kecerdikannya sendiri.",
+    "lore": "Dingin, kalkulatif, dan menakutkan dengan cara yang anehnya maternal — dia akan bertindak tegas tanpa ragu, tapi sungguh-sungguh peduli pada 'anak-anaknya' di House of the Hearth. Naik dari anak yatim piatu menjadi Harbinger ke-4 (\"The Knave\") dengan keberanian dan kecerdikannya sendiri.",
     "stats": [
       {
         "label": "Element",
@@ -29,7 +29,7 @@
   {
     "id": 2,
     "name": "Neuvillette",
-    "title": "Iudex of Fontaine · Ancient Dragon of Water",
+    "title": "Iudex of Fontaine · Hydro Dragon Sovereign",
     "category": "Genshin Impact",
     "image": "images/characters/neuvillette.jpg",
     "tags": [
@@ -37,7 +37,7 @@
       "Hydro",
       "Iudex"
     ],
-    "lore": "Stoik, adil sampai ke akar, dan diam-diam emosional — kelihatannya dingin tapi secara harfiah MENANGIS tiap kali ngeliat ketidakadilan. Reinkarnasi Ancient Dragon of Water yang berkuasa sebelum Hydro Archon. Neuvillette menanggung keadilan itu sendiri, bukan cuma menjalankannya.",
+    "lore": "Stoik, adil sampai ke akar, dan diam-diam emosional — kelihatannya dingin, tapi dukanya begitu dalam sampai kesedihannya memicu hujan di Fontaine. Reinkarnasi Hydro Dragon Sovereign yang menanggung keadilan tertinggi di Fontaine.",
     "stats": [
       {
         "label": "Element",
@@ -64,7 +64,7 @@
       "Anemo",
       "Former Harbinger"
     ],
-    "lore": "Sombong, tajam lisannya, dan menyimpan luka yang dalam banget di baliknya — karakter paling tragis di Genshin Impact. Boneka yang diciptakan Ei buat gantiin sahabatnya yang meninggal, lalu ditinggalkan dan dimanipulasi sepanjang hidupnya — sampai akhirnya dia milih jadi dirinya sendiri.",
+    "lore": "Sombong, tajam lisannya, dan menyimpan luka yang dalam. Diciptakan oleh Raiden Ei sebagai prototipe wadah Gnosis, lalu ditinggalkan dan dimanipulasi sepanjang hidupnya sebelum akhirnya memilih jalannya sendiri sebagai Wanderer.",
     "stats": [
       {
         "label": "Element",
@@ -83,7 +83,7 @@
   {
     "id": 4,
     "name": "Jinhsi",
-    "title": "Magistrix of Jinzhou · Sentinel Jué",
+    "title": "Magistrate of Jinzhou · Appointed Resonator of Jué",
     "category": "Wuthering Waves",
     "image": "images/characters/jinhsi.jpg",
     "tags": [
@@ -91,7 +91,7 @@
       "Spectro",
       "Resonator"
     ],
-    "lore": "Lembut, bijaksana melebihi usianya, menanggung berat satu kota di bahunya dengan keanggunan yang sunyi. Resonator pilihan Sentinel Jué — pemimpin spiritual Jinzhou yang menyalurkan kekuatan seekor naga. Di balik ketenangannya ada tekad yang nggak bisa digoyahkan.",
+    "lore": "Lembut, bijaksana melebihi usianya, menanggung berat satu kota di bahunya dengan keanggunan yang sunyi. Magistrate Jinzhou sekaligus Resonator pilihan Jué — Sentinel berwujud Loong yang memandu peradaban Jinzhou.",
     "stats": [
       {
         "label": "Element",
@@ -103,7 +103,7 @@
       },
       {
         "label": "Role",
-        "value": "DPS / Magistrix"
+        "value": "Main DPS / Magistrate"
       }
     ]
   },
@@ -118,7 +118,7 @@
       "Havoc",
       "Resonator"
     ],
-    "lore": "Kekanak-kanakan dan ceria di permukaan, MENGERIKAN di dalamnya — bisa switch antara polos dan bloodthirsty secara instan. Gadis yang menyatu dengan entitas tanaman karnivora; sanity-nya terfragmentasi tapi kekuatannya jadi nggak terukur. Senyumnya yang manis itu justru tanda bahaya paling nyata.",
+    "lore": "Ceria dan liar di permukaan dengan kepribadian memikat yang bisa berubah menjadi berbahaya dalam sekejap. Bertarung menggunakan manipulasi vegetasi/sulur darah Havoc dan pergerakan fleksibel di medan tempur.",
     "stats": [
       {
         "label": "Element",
@@ -126,18 +126,18 @@
       },
       {
         "label": "Weapon",
-        "value": "Sword"
+        "value": "Vines / Rectifier"
       },
       {
         "label": "Role",
-        "value": "DPS"
+        "value": "Main DPS"
       }
     ]
   },
   {
     "id": 6,
     "name": "Jianxin",
-    "title": "Void Monk of Jinzhou",
+    "title": "Taoist Monk · Fengyiquan Master",
     "category": "Wuthering Waves",
     "image": "images/characters/jianxin.jpg",
     "tags": [
@@ -145,7 +145,7 @@
       "Aero",
       "Resonator"
     ],
-    "lore": "Tenang, filosofis, ngomongnya kayak teka-teki — the classic monk who 'could level a mountain but chooses peace'. Master seni bela diri dari Jinzhou yang capai harmoni sempurna antara resonance power dan jiwanya. Ketenangannya bukan kelemahan — itu bentuk kekuatan yang paling murni.",
+    "lore": "Tenang, filosofis, dan memegang teguh ajaran keseimbangan. Master seni bela diri Fengyiquan yang mampu menyelaraskan kekuatan Chi dan Resonance untuk melindungi orang lain.",
     "stats": [
       {
         "label": "Element",
@@ -157,7 +157,7 @@
       },
       {
         "label": "Role",
-        "value": "Support / Tank"
+        "value": "Hybrid / Support"
       }
     ]
   },
@@ -165,14 +165,14 @@
     "id": 7,
     "name": "Endministrator",
     "title": "Enigmatic Leader of Endfield Industries",
-    "category": "Enfield",
+    "category": "Arknights: Endfield",
     "image": "images/characters/endministrator.jpg",
     "tags": [
-      "Enfield",
+      "Arknights: Endfield",
       "Endfield Industries",
       "Leader"
     ],
-    "lore": "Misterius, analitis, ngomong dengan authority penuh — terasa kayak seseorang yang udah lihat akhir dunia dan memutuskan buat memperbaikinya bagaimanapun caranya. Pemimpin enigmatik Endfield Industries yang latar belakang asli dan motif sesungguhnya masih terus terurai perlahan.",
+    "lore": "Misterius dan analitis, memegang otoritas tertinggi di Endfield Industries. Sosok penentu yang bangkit dari hibernasi untuk memandu pemulihan peradaban di planet Talos-II.",
     "stats": [
       {
         "label": "Faction",
@@ -180,26 +180,26 @@
       },
       {
         "label": "Role",
-        "value": "CEO / Leader"
+        "value": "Leader / Sword Specialist"
       },
       {
         "label": "Status",
-        "value": "Unknown"
+        "value": "Active"
       }
     ]
   },
   {
     "id": 8,
     "name": "Perlica",
-    "title": "Chief Scientist · Endfield Industries",
-    "category": "Enfield",
+    "title": "Supervisor · Endfield Industries",
+    "category": "Arknights: Endfield",
     "image": "images/characters/perlica.jpg",
     "tags": [
-      "Enfield",
+      "Arknights: Endfield",
       "Endfield Industries",
-      "Scientist"
+      "Supervisor"
     ],
-    "lore": "Ceria, genius-level intellect yang tersembunyi di balik keceriaan — tipe orang yang solve catastrophic problems sambil ngemil. Chief scientist Endfield, bertanggung jawab atas sebagian besar teknologi revolusioner perusahaan di planet berbahaya, Talos-II.",
+    "lore": "Tenang, sigap, dan tegas menghadapi krisis — Supervisor sekaligus juru bicara resmi Endfield Industries yang memimpin penanganan krisis di planet Talos-II.",
     "stats": [
       {
         "label": "Faction",
@@ -207,7 +207,7 @@
       },
       {
         "label": "Role",
-        "value": "Chief Scientist"
+        "value": "Supervisor / Caster"
       },
       {
         "label": "Planet",
@@ -218,54 +218,54 @@
   {
     "id": 9,
     "name": "Fluorite",
-    "title": "Strategic Analyst · Endfield Industries",
-    "category": "Enfield",
+    "title": "Skirmisher · Operations Team Z7",
+    "category": "Arknights: Endfield",
     "image": "images/characters/fluorite.jpg",
     "tags": [
-      "Enfield",
-      "Endfield Industries",
-      "Analyst"
+      "Arknights: Endfield",
+      "Thermal",
+      "Guard"
     ],
-    "lore": "Tenang, presisi, dengan logika yang crystal clear — Fluorite adalah otak strategis Endfield. Dia memproses chaos jadi clarity dengan natural, dan jarang salah. Di balik sikapnya yang composed dan profesional ada ketajaman observasi yang nggak banyak orang sadari sampai terlambat.",
+    "lore": "Lincah, usil, dan penuh akal — pengintai garis depan dari Operations Team Z7 Endfield Industries yang bertarung secara adaptif di wilayah perbatasan Civilization Band.",
     "stats": [
       {
-        "label": "Faction",
-        "value": "Endfield Industries"
+        "label": "Element",
+        "value": "Thermal"
       },
       {
-        "label": "Role",
-        "value": "Strategic Analyst"
+        "label": "Weapon",
+        "value": "Sword"
       },
       {
-        "label": "Status",
-        "value": "Classified"
+        "label": "Unit",
+        "value": "Operations Team Z7"
       }
     ]
   },
   {
     "id": 10,
     "name": "Zero",
-    "title": "The Appraiser · Esper Tanpa Identitas",
+    "title": "Esper · Bureau Collaborator",
     "category": "Neverness to Everness",
     "image": "images/characters/zero.jpg",
     "tags": [
       "Neverness to Everness",
       "Esper",
-      "Amnesiac"
+      "Hethereau"
     ],
-    "lore": "Misterius, penuh tekad sunyi, dan punya daya tarik magnetis yang nyambungin semua orang di sekitarnya. Menanggung beban nggak punya kenangan atau identitas sama sekali — tapi entah gimana jadi emotional anchor buat seluruh grup. Muncul dari ketiadaan waktu Anomali 'Code Zero' menyerang Hethereau, dan sejak itu jalan tanpa tahu dari mana asalnya.",
+    "lore": "Misterius dan penuh tekad. Esper yang terlibat dalam penanganan krisis Anomaly di wilayah Hethereau bersama rekan-rekannya di Eibon Antique Shop.",
     "stats": [
       {
         "label": "Faction",
-        "value": "Independent"
+        "value": "Eibon Antique Shop"
       },
       {
         "label": "Ability",
-        "value": "Anomaly Suppression"
+        "value": "Esper Anomaly Combat"
       },
       {
-        "label": "Status",
-        "value": "Total Amnesia"
+        "label": "Location",
+        "value": "Hethereau"
       }
     ]
   },
@@ -280,7 +280,7 @@
       "Esper",
       "Hethereau"
     ],
-    "lore": "Tenang, bijaksana, punya strong sense of justice — ngomongnya pelan tapi setiap kata mendarat dengan berat. Kayak seseorang yang udah lihat terlalu banyak kegelapan tapi milih kebaikan. Ngelola Eibon Antique Shop di Bridge District Hethereau — yang ternyata adalah hub buat Anomaly-related activity, jauh lebih dari yang kelihatan.",
+    "lore": "Pemilik Eibon Antique Shop di Bridge District Hethereau. Di balik bisnis barang antik tersebut, toko ini berfungsi sebagai pusat konsultasi dan penanganan krisis fenomena Anomaly.",
     "stats": [
       {
         "label": "Occupation",
@@ -307,7 +307,7 @@
       "BAC",
       "Captain"
     ],
-    "lore": "Santai, blak-blakan sampai batas, agak troublemaker — the classic 'looks like he doesn't care but actually one of the most reliable people in the room'. Extremely loveable justru karena itu. Captain ETD-4 di Bureau of Anomaly Control — casual attitude-nya nyembunyiin combat ability yang luar biasa.",
+    "lore": "Kapten ETD-4 di Bureau of Anomaly Control. Sikapnya yang santai dan blak-blakan menyembunyikan kemampuan tempur serta taktik lapangan yang handal.",
     "stats": [
       {
         "label": "Rank",
@@ -334,7 +334,7 @@
       "Gryffindor",
       "The Chosen One"
     ],
-    "lore": "Berani, loyal sampai batas, dan kadang reckless — menanggung beban sebuah prophecy yang nggak pernah dia minta dengan heroisme yang reluctant banget. Harry nggak pernah mau jadi spesial; dia cuma mau punya keluarga. Semua yang dia lakuin datang dari cinta, bukan destiny — dan itu justru yang bikin dia orang yang tepat.",
+    "lore": "Penyihir berani dan setia yang menanggung beban ramalan untuk mengalahkan Lord Voldemort, didorong oleh rasa cinta dan perlindungan terhadap sahabat-sahabatnya.",
     "stats": [
       {
         "label": "House",
@@ -353,7 +353,7 @@
   {
     "id": 14,
     "name": "Cedric Diggory",
-    "title": "Hufflepuff Champion · Tri-Wizard Tournament",
+    "title": "Hufflepuff Champion · Triwizard Tournament",
     "category": "Harry Potter",
     "image": "images/characters/cedric-diggory.jpg",
     "tags": [
@@ -361,7 +361,7 @@
       "Hufflepuff",
       "Champion"
     ],
-    "lore": "Genuinely kind, honorable, fair-minded — the rare kind of person yang populer tanpa ada seujung kuku pun rasa sombong. Dia main fair bukan karena harus, tapi karena dia emang beneran percaya sama fair play. Kebaikannya bukan performance — itu cuma siapa dia. Dan itu yang bikin kepergiannya begitu berat.",
+    "lore": "Siswa Hufflepuff yang adil, jujur, dan rendah hati. Terpilih sebagai Juara Hogwarts dalam Turnamen Triwizard dan mewakili nilai kejujuran sejati.",
     "stats": [
       {
         "label": "House",
@@ -369,7 +369,7 @@
       },
       {
         "label": "Tournament",
-        "value": "Tri-Wizard Champion"
+        "value": "Triwizard Champion"
       },
       {
         "label": "Legacy",
@@ -388,7 +388,7 @@
       "Gryffindor",
       "Muggle-born"
     ],
-    "lore": "Brilian, berprinsip keras, dan kadang menyebalkan karenanya — tipe orang yang baca rulebook SEKALIGUS ngelanggar aturan kalau itu emang harus dilakukan. Tulang punggung sejati trio itu; kecerdasan dan keberaniannya nyalamatiin semua orang jauh lebih banyak dari status 'the chosen one' milik Harry.",
+    "lore": "Penyihir kelahiran Muggle yang sangat cerdas, logis, dan setia. Kecerdasan serta ketekunannya menjadi kunci penting dalam berbagai krisis yang dihadapi Trio Gryffindor.",
     "stats": [
       {
         "label": "House",
@@ -407,7 +407,7 @@
   {
     "id": 16,
     "name": "Kim Dokja",
-    "title": "Sole Reader · Incarnation",
+    "title": "Sole Reader · Demon King of Salvation",
     "category": "Omniscient Reader",
     "image": "images/characters/kim-dokja.jpg",
     "tags": [
@@ -415,7 +415,7 @@
       "Sole Reader",
       "Protagonist"
     ],
-    "lore": "'51% — itu cukup alasan untuk bertindak.' Kim Dokja hidup dengan prinsip probabilitas itu: kalau peluang selamatnya 51%, dia lakukan tanpa ragu, meski 49%-nya berarti mati. Self-sacrificing sampai titik destruktif, pakai self-deprecation sebagai armor, beneran percaya dia nggak layak diselamatkan — protagonis paling sunyi yang pernah ditulis. Pekerja kantoran biasa yang baca 'Three Ways to Survive the Apocalypse' sampai tamat. Lalu ceritanya jadi nyata, dan dia satu-satunya yang tahu cara tamatin-nya.",
+    "lore": "Pekerja kantoran biasa yang merupakan satu-satunya pembaca novel 'Three Ways to Survive in a Ruined World'. Ketika dunia novel menjadi kenyataan, ia memanfaatkan pengetahuannya untuk mengubah jalan cerita dan menyelamatkan rekan-rekannya.",
     "stats": [
       {
         "label": "Stigma",
@@ -426,15 +426,15 @@
         "value": "Incarnation"
       },
       {
-        "label": "Probabilitas",
-        "value": "51% — Cukup"
+        "label": "Constellation Modifier",
+        "value": "Demon King of Salvation"
       }
     ]
   },
   {
     "id": 17,
     "name": "Yoo Joonghyuk",
-    "title": "Regression Protagonist · 1,864th Turn",
+    "title": "Supreme King · Regressor",
     "category": "Omniscient Reader",
     "image": "images/characters/yoo-joonghyuk.jpg",
     "tags": [
@@ -442,7 +442,7 @@
       "Regressor",
       "Novel Protagonist"
     ],
-    "lore": "Dingin, tanpa ampun, ngomongnya dalam kalimat pendek — udah ngejalanin siklus kiamat berulang kali sampai lupa rasanya peduli, sampai akhirnya nggak bisa lagi pura-pura. Protagonist dari novel yang dibaca Kim Dokja — regression hero yang udah hidup dan mati melampaui batas yang harusnya ditanggung siapapun.",
+    "lore": "Protagonis utama dari novel asli yang memiliki kemampuan regresi setelah kematian. Pada alur utama cerita Kim Dokja, Yoo Joonghyuk berada di putaran ke-3 (3rd Turn).",
     "stats": [
       {
         "label": "Attribute",
@@ -450,7 +450,7 @@
       },
       {
         "label": "Regression",
-        "value": "1,864th Turn"
+        "value": "3rd Turn (Main Timeline)"
       },
       {
         "label": "Class",
@@ -461,23 +461,23 @@
   {
     "id": 18,
     "name": "Han Sooyoung",
-    "title": "Author & Regressor",
+    "title": "Author & Incarnation",
     "category": "Omniscient Reader",
     "image": "images/characters/han-sooyoung.jpg",
     "tags": [
       "Omniscient Reader",
-      "Regressor",
-      "Author"
+      "Author",
+      "Incarnation"
     ],
-    "lore": "Sarkas, jujur brutal, pura-pura nggak peduli sama APAPUN — padahal sebenernya peduli sama segalanya dan rela hancurin dirinya sendiri buat ngelindunginnya. Penulis yang diam-diam nulis 'Three Ways to Survive the Apocalypse' — koneksinya sama cerita dan karakter-karakternya jauh lebih dalam dari yang diketahui bahkan Kim Dokja.",
+    "lore": "Penulis bertalenta yang tajam, strategis, dan sarkastik. Ia memiliki pemahaman mendalam tentang struktur cerita dan bertindak sebagai salah satu pengatur taktik terpenting dalam kelompok Kim Dokja.",
     "stats": [
       {
         "label": "Attribute",
-        "value": "Author / Regressor"
+        "value": "Author"
       },
       {
         "label": "Work",
-        "value": "Three Ways to Survive"
+        "value": "SSSSS-Grade Infinite Regressor"
       },
       {
         "label": "Class",
@@ -496,7 +496,7 @@
       "Na'vi",
       "Omatikaya"
     ],
-    "lore": "Garang, spiritual, awalnya hostile tapi penuh cinta yang sangat dalam — Neytiri mewujudkan jiwa Na'vi dengan sempurna, ngerasain segalanya pada intensitas maksimum. Putri pemimpin klan Omatikaya, warrior dan hunter pilihan, dipilih Eywa sendiri buat guide Jake Sully. Cintanya pada dunianya jadi cintanya pada dia.",
+    "lore": "Prajurit dan pemburu tangguh dari klan Omatikaya di Pandora. Ia memandu Jake Sully memahami cara hidup Na'vi dan hubungan spiritual yang mendalam dengan Eywa.",
     "stats": [
       {
         "label": "Clan",
@@ -504,7 +504,7 @@
       },
       {
         "label": "Role",
-        "value": "Warrior / Hunter"
+        "value": "Warrior / Tsahìk Apprentice"
       },
       {
         "label": "Bond",
@@ -515,7 +515,7 @@
   {
     "id": 20,
     "name": "Lo'ak",
-    "title": "Son of Jake Sully · Between Two Worlds",
+    "title": "Son of Jake Sully · Metkayina Initiate",
     "category": "Avatar",
     "image": "images/characters/lo-ak.jpg",
     "tags": [
@@ -523,7 +523,7 @@
       "Na'vi",
       "Metkayina"
     ],
-    "lore": "Impulsif, desperate buat buktiin diri, nanggung beban jadi putra 'yang mengecewakan' Jake Sully — tapi hatinya adalah yang paling murni dalam keluarga. Putra setengah Na'vi setengah manusia dari Jake dan Neytiri, lahir di antara dua dunia tanpa sepenuhnya milik keduanya — sampai klan Metkayina dan seekor tulkun bernama Payakan nunjukin siapa dirinya sebenarnya.",
+    "lore": "Putra kedua dari Jake Sully dan Neytiri. Sering merasa terasing karena darah campurannya, hingga ia menemukan kebenaran dan ikatan persaudaraan sejati dengan seekor Tulkun bernama Payakan.",
     "stats": [
       {
         "label": "Clan",
@@ -531,7 +531,7 @@
       },
       {
         "label": "Status",
-        "value": "Half Na'vi, Half Human"
+        "value": "Na'vi-Human Hybrid"
       },
       {
         "label": "Bond",
