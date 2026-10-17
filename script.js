@@ -375,4 +375,145 @@ async function init() {
   }
 }
 
+// Guestbook
+const GB_COLORS = ['#D4BBFF', '#B5EDDA', '#FFB8C8', '#FFF3A8', '#B8DEFF', '#FFDDB8'];
+
+const gbForm    = document.getElementById('gb-form');
+const gbList    = document.getElementById('gb-list');
+const gbLoading = document.getElementById('gb-loading');
+const gbStatus  = document.getElementById('gb-status');
+const gbSubmit  = document.getElementById('gb-submit');
+const gbMessage = document.getElementById('gb-message');
+const gbCounter = document.getElementById('gb-counter');
+const gbName    = document.getElementById('gb-name');
+
+function setGbStatus(msg, type) {
+  if (!gbStatus) return;
+  gbStatus.textContent = msg;
+  gbStatus.className   = `request-form__status request-form__status--${type}`;
+  gbStatus.hidden      = false;
+}
+
+function formatTime(iso) {
+  try {
+    return new Intl.DateTimeFormat('id-ID', {
+      day: '2-digit', month: 'short', year: 'numeric',
+      hour: '2-digit', minute: '2-digit',
+    }).format(new Date(iso));
+  } catch {
+    return iso;
+  }
+}
+
+function buildGbCard(entry, index) {
+  const card = document.createElement('article');
+  card.className = 'gb-card';
+  card.style.setProperty('--gb-bg', GB_COLORS[index % GB_COLORS.length]);
+
+  const initial = (entry.name || '?').charAt(0).toUpperCase();
+
+  card.innerHTML = `
+    <div class="gb-card__header">
+      <div class="gb-card__avatar" aria-hidden="true">${initial}</div>
+      <div>
+        <p class="gb-card__name">${entry.name}</p>
+        <p class="gb-card__time">${formatTime(entry.timestamp)}</p>
+      </div>
+    </div>
+    <p class="gb-card__message">${entry.message}</p>
+  `;
+  return card;
+}
+
+async function loadGuestbook() {
+  if (!gbList) return;
+  try {
+    const res = await fetch('/api/guestbook');
+    if (!res.ok) throw new Error(`${res.status}`);
+    const entries = await res.json();
+
+    if (gbLoading) gbLoading.remove();
+
+    if (!entries.length) {
+      gbList.innerHTML = '<p class="gb-empty">Belum ada pesan. Jadilah yang pertama! ★</p>';
+      return;
+    }
+
+    const frag = document.createDocumentFragment();
+    entries.forEach((entry, i) => frag.appendChild(buildGbCard(entry, i)));
+    gbList.appendChild(frag);
+  } catch (err) {
+    if (gbLoading) gbLoading.textContent = 'Buku tamu tidak tersedia di lokal. Deploy ke Vercel dulu ya!';
+    console.warn('Guestbook load error:', err.message);
+  }
+}
+
+// Char counter
+if (gbMessage) {
+  gbMessage.addEventListener('input', () => {
+    if (gbCounter) gbCounter.textContent = gbMessage.value.length;
+  });
+}
+
+// Rate limit guestbook — 1 post per 5 menit per browser
+function checkGbRateLimit() {
+  const KEY  = 'ae_gb_last';
+  const now  = Date.now();
+  const last = parseInt(localStorage.getItem(KEY) || '0', 10);
+  if (now - last < 5 * 60 * 1000) return false;
+  localStorage.setItem(KEY, String(now));
+  return true;
+}
+
+if (gbForm) {
+  gbForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!gbForm.checkValidity()) { gbForm.reportValidity(); return; }
+
+    if (!checkGbRateLimit()) {
+      setGbStatus('⏱ Tunggu 5 menit sebelum kirim pesan lagi.', 'err');
+      return;
+    }
+
+    const data = {
+      name:    gbName.value.trim(),
+      message: gbMessage.value.trim(),
+    };
+
+    gbSubmit.disabled = true;
+    setGbStatus('Mengirim...', 'busy');
+
+    try {
+      const res = await fetch('/api/guestbook', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error || `Error ${res.status}`);
+
+      // Prepend card baru langsung tanpa reload
+      const existing = gbList.querySelector('.gb-empty');
+      if (existing) existing.remove();
+      const card = buildGbCard(json.entry ?? { ...data, timestamp: new Date().toISOString() }, 0);
+      gbList.insertBefore(card, gbList.firstChild);
+
+      // Geser warna kartu lama
+      gbList.querySelectorAll('.gb-card').forEach((c, i) => {
+        c.style.setProperty('--gb-bg', GB_COLORS[i % GB_COLORS.length]);
+      });
+
+      gbForm.reset();
+      if (gbCounter) gbCounter.textContent = '0';
+      setGbStatus('✓ Pesan terkirim! Makasih sudah mampir.', 'ok');
+    } catch (err) {
+      console.error('Guestbook post error:', err);
+      setGbStatus(`✗ ${err.message}`, 'err');
+    } finally {
+      gbSubmit.disabled = false;
+    }
+  });
+}
+
 init();
+loadGuestbook();
