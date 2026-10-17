@@ -6,16 +6,15 @@
    2. Kirim pesan ke bot kamu, lalu buka:
       https://api.telegram.org/bot<TOKEN>/getUpdates
       untuk dapatkan CHAT_ID kamu
-   3. Isi botToken dan chatId di bawah
-   4. Ubah enabled: false → enabled: true
+   3. Isi botToken dan chatId di file .env atau di Environment Variables tempat hosting
+   4. Atur ENABLE_REQUEST ke true di env
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/// from env
 const dotenv = require('dotenv');
 dotenv.config();
 
 window.TELEGRAM_CONFIG = {
-  enabled:  false,                      // ← ubah jadi true setelah isi token
-  botToken: process.env.BOT_TOKEN,      // ← isi token dari @BotFather
-  chatId:   process.env.CHAT_ID,        // ← isi chat_id kamu
+  enabled:  process.env.ENABLE_REQUEST,
+  botToken: process.env.BOT_TOKEN,
+  chatId:   process.env.CHAT_ID,
 };
