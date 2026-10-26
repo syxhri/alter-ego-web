@@ -6,6 +6,11 @@ node_modules/
 # Internal docs (not for repo)
 PANDUAN-GAMBAR.md
 
+# Archive / zip files
+*.zip
+*.rar
+*.7z
+
 # Build outputs
 dist/
 .next/
