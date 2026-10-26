@@ -274,80 +274,172 @@ document.querySelectorAll('.navbar__link, .navbar__mobile-link').forEach((link) 
   });
 });
 
-// Telegram — Request Karakter
-const requestForm   = document.getElementById('request-form');
-const requestStatus = document.getElementById('request-status');
-const requestSubmit = document.getElementById('request-submit');
+// Submit Karakter
+const submitForm   = document.getElementById('submit-form');
+const submitStatus = document.getElementById('submit-status');
+const submitBtn    = document.getElementById('submit-btn');
+const subImage     = document.getElementById('sub-image');
+const subDropzone  = document.getElementById('sub-dropzone');
+const subPreview   = document.getElementById('sub-preview');
+const subPreviewImg  = document.getElementById('sub-preview-img');
+const subPreviewName = document.getElementById('sub-preview-name');
+const subPreviewRm   = document.getElementById('sub-preview-remove');
+const subPersonality = document.getElementById('sub-personality');
+const subPersonalityCount = document.getElementById('sub-personality-count');
 
-function checkRateLimit() {
-  const KEY  = 'ae_req_times';
+let selectedImageFile = null;
+
+function setSubmitStatus(msg, type) {
+  if (!submitStatus) return;
+  submitStatus.textContent = msg;
+  submitStatus.className   = `submit-form__status submit-form__status--${type}`;
+  submitStatus.hidden      = false;
+}
+
+function checkSubmitRateLimit() {
+  const KEY  = 'ae_sub_times';
   const now  = Date.now();
   const hour = 60 * 60 * 1000;
   let times  = JSON.parse(localStorage.getItem(KEY) || '[]');
   times = times.filter(t => now - t < hour);
-  if (times.length >= 3) return false;
+  if (times.length >= 2) return false;
   times.push(now);
   localStorage.setItem(KEY, JSON.stringify(times));
   return true;
 }
 
-function setRequestStatus(msg, type) {
-  if (!requestStatus) return;
-  requestStatus.textContent = msg;
-  requestStatus.className   = `request-form__status request-form__status--${type}`;
-  requestStatus.hidden      = false;
+function showImagePreview(file) {
+  if (!file || !file.type.startsWith('image/')) return;
+  selectedImageFile = file;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    subPreviewImg.src = e.target.result;
+    subPreviewName.textContent = file.name;
+    subPreview.classList.add('has-image');
+    subDropzone.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
 }
 
-async function sendToTelegram(data) {
-  // Kirim ke Vercel serverless function — token Telegram ada di server, bukan browser
-  const res = await fetch('/api/send-request', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+function clearImagePreview() {
+  selectedImageFile = null;
+  subPreviewImg.src = '';
+  subPreviewName.textContent = '';
+  subPreview.classList.remove('has-image');
+  subDropzone.style.display = '';
+  if (subImage) subImage.value = '';
+}
+
+// Character counter for personality
+if (subPersonality) {
+  subPersonality.addEventListener('input', () => {
+    if (subPersonalityCount) subPersonalityCount.textContent = subPersonality.value.length;
   });
-
-  const json = await res.json().catch(() => ({}));
-
-  if (!res.ok) {
-    // 503 = env vars belum diset di Vercel
-    // 404 = sedang buka via Live Server lokal (bukan Vercel)
-    if (res.status === 404) {
-      throw new Error('Fitur request hanya aktif saat di-deploy ke Vercel.');
-    }
-    throw new Error(json.error || `Error ${res.status}`);
-  }
 }
 
-if (requestForm) {
-  requestForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!requestForm.checkValidity()) { requestForm.reportValidity(); return; }
+// File input change
+if (subImage) {
+  subImage.addEventListener('change', () => {
+    if (subImage.files && subImage.files[0]) showImagePreview(subImage.files[0]);
+  });
+}
 
-    if (!checkRateLimit()) {
-      setRequestStatus('⏱ Terlalu banyak request. Coba lagi dalam 1 jam.', 'err');
+// Drag and drop
+if (subDropzone) {
+  subDropzone.addEventListener('dragover', (e) => { e.preventDefault(); subDropzone.classList.add('drag-over'); });
+  subDropzone.addEventListener('dragleave', () => subDropzone.classList.remove('drag-over'));
+  subDropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    subDropzone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) showImagePreview(file);
+  });
+}
+
+// Remove preview
+if (subPreviewRm) {
+  subPreviewRm.addEventListener('click', clearImagePreview);
+}
+
+async function uploadToCloudinary(file) {
+  const cfg = window.CLOUDINARY_CONFIG;
+  if (!cfg || !cfg.cloudName || !cfg.uploadPreset) {
+    throw new Error('Cloudinary belum dikonfigurasi. Isi config.js terlebih dahulu.');
+  }
+
+  const fd = new FormData();
+  fd.append('file', file);
+  fd.append('upload_preset', cfg.uploadPreset);
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${cfg.cloudName}/image/upload`,
+    { method: 'POST', body: fd }
+  );
+
+  if (!res.ok) throw new Error('Upload gambar gagal. Cek config Cloudinary.');
+  const data = await res.json();
+  return data.secure_url;
+}
+
+if (submitForm) {
+  submitForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitForm.checkValidity()) { submitForm.reportValidity(); return; }
+
+    if (!checkSubmitRateLimit()) {
+      setSubmitStatus('⏱ Limit 2 submit per jam. Coba lagi nanti.', 'err');
       return;
     }
 
-    const data = {
-      name:      document.getElementById('req-name').value.trim(),
-      category:  document.getElementById('req-category').value,
-      character: document.getElementById('req-character').value.trim(),
-      reason:    document.getElementById('req-reason').value.trim(),
-    };
-
-    requestSubmit.disabled = true;
-    setRequestStatus('Mengirim...', 'busy');
+    submitBtn.disabled = true;
+    setSubmitStatus('Memproses...', 'busy');
 
     try {
-      await sendToTelegram(data);
-      setRequestStatus('✓ Request terkirim! Makasih.', 'ok');
-      requestForm.reset();
-      requestStatus.hidden = false;
+      // Upload gambar ke Cloudinary kalau ada
+      let imageUrl = '';
+      if (selectedImageFile) {
+        setSubmitStatus('Mengunggah gambar...', 'busy');
+        imageUrl = await uploadToCloudinary(selectedImageFile);
+      }
+
+      // Kumpulin stats
+      const stats = [1, 2, 3].map((n) => ({
+        label: (submitForm.querySelector(`[name="stat${n}_label"]`)?.value || '').trim(),
+        value: (submitForm.querySelector(`[name="stat${n}_value"]`)?.value || '').trim(),
+      })).filter(s => s.label && s.value);
+
+      const payload = {
+        sender:      document.getElementById('sub-sender').value.trim(),
+        charName:    document.getElementById('sub-char').value.trim(),
+        franchise:   document.getElementById('sub-franchise').value.trim(),
+        personality: subPersonality.value.trim(),
+        imageUrl,
+        stats,
+        note:        (document.getElementById('sub-note')?.value || '').trim(),
+      };
+
+      setSubmitStatus('Mengirim ke admin...', 'busy');
+      const res = await fetch('/api/send-request', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        if (res.status === 404) throw new Error('Fitur ini hanya aktif saat di-deploy ke Vercel.');
+        throw new Error(json.error || `Error ${res.status}`);
+      }
+
+      setSubmitStatus('✓ Karakter berhasil disubmit! Admin akan mereview segera.', 'ok');
+      submitForm.reset();
+      clearImagePreview();
+      if (subPersonalityCount) subPersonalityCount.textContent = '0';
     } catch (err) {
-      console.error('Request error:', err);
-      setRequestStatus(`✗ ${err.message}`, 'err');
+      console.error('Submit error:', err);
+      setSubmitStatus(`✗ ${err.message}`, 'err');
     } finally {
-      requestSubmit.disabled = false;
+      submitBtn.disabled = false;
     }
   });
 }

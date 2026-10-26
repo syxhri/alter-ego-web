@@ -44,7 +44,7 @@
       <nav class="navbar__nav" aria-label="Navigasi utama">
         <a href="#archive" class="navbar__link">Archive</a>
         <a href="#alter-egos" class="navbar__link">Our Alter Ego</a>
-        <a href="#request" class="navbar__link">Request</a>
+        <a href="#request" class="navbar__link">Submit</a>
         <a href="#guestbook" class="navbar__link">Buku Tamu</a>
       </nav>
 
@@ -74,7 +74,7 @@
       </a>
       <a href="#request" class="navbar__mobile-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        Request
+        Submit
       </a>
       <a href="#guestbook" class="navbar__mobile-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
@@ -247,52 +247,117 @@
       </div>
     </section>
 
-    <!-- REQUEST KARAKTER -->
-    <section class="request-section" id="request" aria-labelledby="request-heading">
+    <!-- SUBMIT KARAKTER -->
+    <section class="submit-section" id="request" aria-labelledby="submit-heading">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title" id="request-heading">
+          <h2 class="section-title" id="submit-heading">
             <span class="section-title__bracket">[</span>
-            REQUEST KARAKTER
+            SUBMIT KARAKTER
             <span class="section-title__bracket">]</span>
           </h2>
-          <p class="section-sub">Ada karakter yang menurutmu layak masuk archive? Request di sini. ★</p>
+          <p class="section-sub">Punya karakter yang menurutmu layak masuk archive? Submit di sini — akan kami review dulu sebelum ditambahin. ★</p>
         </div>
-        <form class="request-form" id="request-form" novalidate>
-          <div class="request-form__row">
-            <div class="request-form__field">
-              <label class="request-form__label" for="req-name">Nama kamu</label>
-              <input class="request-form__input" type="text" id="req-name" name="name" placeholder="Nama / nickname..." autocomplete="name" required />
+        <form class="submit-form" id="submit-form" novalidate>
+
+          <!-- Baris 1: Nama pengirim + Nama karakter -->
+          <div class="submit-form__row">
+            <div class="submit-form__field">
+              <label class="submit-form__label" for="sub-sender">Nama kamu</label>
+              <input class="submit-form__input" type="text" id="sub-sender" name="sender" placeholder="Nama / nickname kamu..." autocomplete="name" required maxlength="80" />
             </div>
-            <div class="request-form__field">
-              <label class="request-form__label" for="req-category">Kategori</label>
-              <select class="request-form__input request-form__select" id="req-category" name="category" required>
-                <option value="">Pilih kategori...</option>
-                <option value="Genshin Impact">Genshin Impact</option>
-                <option value="Wuthering Waves">Wuthering Waves</option>
-                <option value="Enfield">Arknights: Endfield</option>
-                <option value="Neverness to Everness">Neverness to Everness</option>
-                <option value="Harry Potter">Harry Potter</option>
-                <option value="Omniscient Reader">Omniscient Reader's Viewpoint</option>
-                <option value="Avatar">Avatar</option>
-                <option value="Lainnya">Lainnya</option>
-              </select>
+            <div class="submit-form__field">
+              <label class="submit-form__label" for="sub-char">Nama karakter</label>
+              <input class="submit-form__input" type="text" id="sub-char" name="charName" placeholder="Nama karakter..." required maxlength="100" />
             </div>
           </div>
-          <div class="request-form__field">
-            <label class="request-form__label" for="req-character">Nama karakter</label>
-            <input class="request-form__input" type="text" id="req-character" name="character" placeholder="Nama karakter yang kamu request..." required />
+
+          <!-- Franchise -->
+          <div class="submit-form__field">
+            <label class="submit-form__label" for="sub-franchise">Franchise / Asal karakter</label>
+            <input class="submit-form__input" type="text" id="sub-franchise" name="franchise" placeholder="Contoh: Genshin Impact, Harry Potter, One Piece..." required maxlength="120" />
           </div>
-          <div class="request-form__field">
-            <label class="request-form__label" for="req-reason">Kenapa karakter ini?</label>
-            <textarea class="request-form__input request-form__textarea" id="req-reason" name="reason" placeholder="Ceritain sedikit kenapa karakter ini layak masuk archive..." rows="4" required></textarea>
+
+          <hr class="submit-form__divider" />
+
+          <!-- Upload gambar -->
+          <div class="submit-form__field submit-form__upload">
+            <span class="submit-form__label">Foto karakter</span>
+            <div class="submit-form__dropzone" id="sub-dropzone" role="button" tabindex="0" aria-label="Klik atau seret foto karakter ke sini">
+              <div class="submit-form__dropzone-inner" id="sub-dropzone-inner">
+                <svg class="submit-form__dropzone-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <p class="submit-form__dropzone-label">Klik atau seret foto ke sini</p>
+                <p class="submit-form__dropzone-hint">JPG / PNG / WEBP · maks. 5 MB</p>
+              </div>
+              <input class="submit-form__file-input" type="file" id="sub-image" name="image" accept="image/jpeg,image/png,image/webp" />
+            </div>
+            <div class="submit-form__preview" id="sub-preview">
+              <img class="submit-form__preview-img" id="sub-preview-img" src="" alt="Preview foto karakter" />
+              <div class="submit-form__preview-info">
+                <span class="submit-form__preview-name" id="sub-preview-name"></span>
+                <button type="button" class="submit-form__preview-remove" id="sub-preview-remove" aria-label="Hapus gambar">✕ Hapus</button>
+              </div>
+            </div>
           </div>
-          <div class="request-form__actions">
-            <button type="submit" class="btn btn--primary request-form__btn" id="request-submit">
+
+          <hr class="submit-form__divider" />
+
+          <!-- Kepribadian -->
+          <div class="submit-form__field">
+            <label class="submit-form__label" for="sub-personality">Kepribadian / Deskripsi karakter <span style="font-weight:400;text-transform:none;letter-spacing:0">(maks. 500 karakter)</span></label>
+            <textarea class="submit-form__input submit-form__textarea" id="sub-personality" name="personality" placeholder="Ceritain kepribadian karakter ini secara singkat — siapa dia, apa yang bikin dia menarik..." rows="4" required maxlength="500"></textarea>
+            <span class="submit-form__counter"><span id="sub-personality-count">0</span> / 500</span>
+          </div>
+
+          <!-- Stats -->
+          <div class="submit-form__field">
+            <span class="submit-form__section-label">Stats karakter (opsional — isi minimal 1)</span>
+            <div class="submit-form__stats-grid" id="sub-stats-grid">
+              <div class="submit-form__stat-row">
+                <div class="submit-form__field">
+                  <p class="submit-form__stat-num">Stat 1</p>
+                  <input class="submit-form__input" type="text" name="stat1_label" placeholder="Label (cth: Element)" maxlength="40" />
+                </div>
+                <div class="submit-form__field">
+                  <p class="submit-form__stat-num">&nbsp;</p>
+                  <input class="submit-form__input" type="text" name="stat1_value" placeholder="Nilai (cth: Pyro)" maxlength="60" />
+                </div>
+              </div>
+              <div class="submit-form__stat-row">
+                <div class="submit-form__field">
+                  <p class="submit-form__stat-num">Stat 2</p>
+                  <input class="submit-form__input" type="text" name="stat2_label" placeholder="Label" maxlength="40" />
+                </div>
+                <div class="submit-form__field">
+                  <p class="submit-form__stat-num">&nbsp;</p>
+                  <input class="submit-form__input" type="text" name="stat2_value" placeholder="Nilai" maxlength="60" />
+                </div>
+              </div>
+              <div class="submit-form__stat-row">
+                <div class="submit-form__field">
+                  <p class="submit-form__stat-num">Stat 3</p>
+                  <input class="submit-form__input" type="text" name="stat3_label" placeholder="Label" maxlength="40" />
+                </div>
+                <div class="submit-form__field">
+                  <p class="submit-form__stat-num">&nbsp;</p>
+                  <input class="submit-form__input" type="text" name="stat3_value" placeholder="Nilai" maxlength="60" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Catatan opsional -->
+          <div class="submit-form__field">
+            <label class="submit-form__label" for="sub-note">Catatan tambahan <span style="font-weight:400;text-transform:none;letter-spacing:0">(opsional)</span></label>
+            <textarea class="submit-form__input submit-form__textarea" id="sub-note" name="note" placeholder="Ada hal lain yang mau kamu tambahin?" rows="2" maxlength="300" style="min-height:72px"></textarea>
+          </div>
+
+          <div class="submit-form__actions">
+            <button type="submit" class="btn btn--primary submit-form__btn" id="submit-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Kirim Request
+              Submit Karakter
             </button>
-            <p class="request-form__status" id="request-status" aria-live="polite" hidden></p>
+            <p class="submit-form__status" id="submit-status" aria-live="polite" hidden></p>
           </div>
         </form>
       </div>
