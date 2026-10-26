@@ -14,6 +14,6 @@ window.TELEGRAM_CONFIG = {
 };
 
 window.CLOUDINARY_CONFIG = {
-  cloudName:    '',   // isi: cloud name dari Cloudinary dashboard
-  uploadPreset: '',   // isi: nama unsigned upload preset kamu
+  cloudName: 'f9cklifb',
+  uploadPreset: 'alter-ego-upload',
 };
