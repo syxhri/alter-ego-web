@@ -565,32 +565,5 @@
         "value": "Karma Tercapai"
       }
     ]
-  },
-  {
-    "id": 21,
-    "name": "Yonsuk",
-    "title": "Fund Manager · Penumpang KTX Busan",
-    "category": "Train to Busan",
-    "image": "images/characters/yonsuk.jpg",
-    "tags": [
-      "Train to Busan",
-      "Antagonis",
-      "Survivor"
-    ],
-    "lore": "Egois, kalkulatif, selalu utamakan diri sendiri di atas segalanya. Fund manager yang cerdas tapi pengecut; setiap keputusannya mengikuti satu kalkulasi sederhana: siapa yang menguntungkan, siapa yang bisa dikorbankan. Bukan karena dia jahat, dia hanya sudah memutuskan bahwa hidupnya lebih berharga dari orang lain. Sampai karma membuktikan sebaliknya.",
-    "stats": [
-      {
-        "label": "Occupation",
-        "value": "Fund Manager"
-      },
-      {
-        "label": "Alignment",
-        "value": "Self-serving"
-      },
-      {
-        "label": "Fate",
-        "value": "Karma Tercapai"
-      }
-    ]
   }
 ]
