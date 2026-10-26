@@ -25,8 +25,8 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Input terlalu panjang.' });
   }
 
-  const token  = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token  = process.env.BOT_TOKEN;
+  const chatId = process.env.CHAT_ID;
 
   if (!token || !chatId) {
     return res.status(503).json({ error: 'Telegram belum dikonfigurasi di server.' });
