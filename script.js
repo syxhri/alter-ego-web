@@ -482,7 +482,7 @@ const gbName    = document.getElementById('gb-name');
 function setGbStatus(msg, type) {
   if (!gbStatus) return;
   gbStatus.textContent = msg;
-  gbStatus.className   = `request-form__status request-form__status--${type}`;
+  gbStatus.className   = `gb-form__status gb-form__status--${type}`;
   gbStatus.hidden      = false;
 }
 
